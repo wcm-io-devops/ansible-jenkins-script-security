@@ -19,32 +19,13 @@ jenkins_script_security_jenkins_update_dir: "{{ jenkins_plugins_jenkins_home }}/
 # The base url of the jenkins instance
 jenkins_script_security_jenkins_base_url: "http://{{ jenkins_script_security_jenkins_hostname }}:{{ jenkins_script_security_jenkins_port }}{{ jenkins_script_security_jenkins_url_prefix }}"
 
-jenkins_script_security_approved_signatures_present:
-  # enable marking stage as skipped
-  - staticMethod org.jenkinsci.plugins.pipeline.modeldefinition.Utils markStageSkippedForConditional java.lang.String
-  # whitelisting for logging package
-  - staticField io.wcm.devops.jenkins.pipeline.utils.logging.LogLevel ALL
-  - staticField io.wcm.devops.jenkins.pipeline.utils.logging.LogLevel TRACE
-  - staticField io.wcm.devops.jenkins.pipeline.utils.logging.LogLevel DEBUG
-  - staticField io.wcm.devops.jenkins.pipeline.utils.logging.LogLevel INFO
-  - staticField io.wcm.devops.jenkins.pipeline.utils.logging.LogLevel DEPRECATED
-  - staticField io.wcm.devops.jenkins.pipeline.utils.logging.LogLevel WARN
-  - staticField io.wcm.devops.jenkins.pipeline.utils.logging.LogLevel ERROR
-  - staticField io.wcm.devops.jenkins.pipeline.utils.logging.LogLevel FATAL
-  - staticField io.wcm.devops.jenkins.pipeline.utils.logging.LogLevel NONE
-  - staticMethod io.wcm.devops.jenkins.pipeline.utils.logging.LogLevel fromString java.lang.String
-  - staticMethod io.wcm.devops.jenkins.pipeline.utils.logging.LogLevel fromInteger java.lang.Integer
-  - staticMethod io.wcm.devops.jenkins.pipeline.utils.logging.LogLevel $INIT java.lang.Object[]
-  - staticMethod io.wcm.devops.jenkins.pipeline.utils.logging.Logger getClassName java.lang.Object
-  - field io.wcm.devops.jenkins.pipeline.utils.logging.Logger name
-  - new io.wcm.devops.jenkins.pipeline.utils.logging.Logger java.lang.Object
-  - new io.wcm.devops.jenkins.pipeline.utils.TypeUtils
-  # versioning package whitelisting
-  - field io.wcm.devops.jenkins.pipeline.versioning.IntegerItem INTEGER_ZER0
-  - new io.wcm.devops.jenkins.pipeline.versioning.IntegerItem
-  - staticField io.wcm.devops.jenkins.pipeline.versioning.StringItem _QUALIFIERS
-  # native java function whitelisting
-  - method java.util.List indexOf java.lang.Object
-  - new java.util.ArrayList
+# List of signature to approve.
+jenkins_script_security_approved_signatures_present: []
+# example entries:
+#  - method java.util.List indexOf java.lang.Object
+#  - new java.util.ArrayList
 
-jenkins_script_security_approved_signatures_absent:
+# List of signatures to remove.
+jenkins_script_security_approved_signatures_absent: []
+# example entries:
+#  - staticMethod org.jenkinsci.plugins.pipeline.modeldefinition.Utils markStageSkippedForConditional java.lang.String
