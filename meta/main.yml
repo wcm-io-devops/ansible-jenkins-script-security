@@ -18,26 +18,26 @@ galaxy_info:
     versions:
     - all
   - name: opensuse
-     versions:
-     - all
+    versions:
+    - all
   - name: GenericBSD
-     versions:
-     - all
+    versions:
+    - all
   - name: FreeBSD
-     versions:
-     - all
+    versions:
+    - all
   - name: Ubuntu
-     versions:
-     - all
+    versions:
+    - all
   - name: SLES
-     versions:
-     - all
+    versions:
+    - all
   - name: GenericLinux
-     versions:
-     - all
+    versions:
+    - all
   - name: Debian
-     versions:
-     - all
+    versions:
+    - all
 
   galaxy_tags:
     - wcmio
