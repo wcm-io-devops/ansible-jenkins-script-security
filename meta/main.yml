@@ -1,0 +1,46 @@
+galaxy_info:
+  role_name: jenkins_script_security
+  author: Tobias Richter
+  description: Role for managing script-security approvals
+  company: pro!vision
+  issue_tracker_url: https://wcm-io.atlassian.net
+  license: Apache
+  min_ansible_version: 2.4
+
+  platforms:
+ - name: EL
+   versions:
+   - all
+ - name: GenericUNIX
+   versions:
+   - all
+ - name: Fedora
+   versions:
+   - all
+ - name: opensuse
+   versions:
+   - all
+ - name: GenericBSD
+   versions:
+   - all
+ - name: FreeBSD
+   versions:
+   - all
+ - name: Ubuntu
+   versions:
+   - all
+ - name: SLES
+   versions:
+   - all
+ - name: GenericLinux
+   versions:
+   - all
+ - name: Debian
+   versions:
+   - all
+
+  galaxy_tags:
+    - wcmio
+    - jenkins
+
+dependencies: []

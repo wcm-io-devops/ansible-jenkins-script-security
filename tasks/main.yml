@@ -1,0 +1,30 @@
+- name: "Configure script approvals."
+  jenkins_script:
+    script: "{{ lookup('file', 'files/groovy/configure_script_security.groovy') }}"
+    user: "{{ jenkins_script_security_admin_username }}"
+    password: "{{ jenkins_script_security_admin_password }}"
+    url: "{{ jenkins_script_security_jenkins_base_url }}"
+    args:
+      signaturesPresent: "{{ jenkins_script_security_approved_signatures_present | to_json }}"
+      signaturesAbsent: "{{ jenkins_script_security_approved_signatures_absent | to_json }}"
+  register: _jenkins_script_security_result
+  changed_when: (_jenkins_script_security_result.output is defined) and (_jenkins_script_security_result.output | regex_replace('^Result:\\s*(.*)\\n*$', '\\1') | b64decode | from_json).changed == true
+
+- name: "Parse groovy script result."
+  set_fact:
+    jenkins_script_security_raw: "{{ _jenkins_script_security_result.output | regex_replace('^Result:\\s*(.*)\\n*$', '\\1') | b64decode }}"
+
+- name: "Log result json."
+  debug:
+    var: jenkins_script_security_raw
+    verbosity: 2
+
+- name: "Log added approvals."
+  debug:
+    var: jenkins_script_security_raw.present
+    verbosity: 1
+
+- name: "Log removed approvals."
+  debug:
+    var: jenkins_script_security_raw.absent
+    verbosity: 1
