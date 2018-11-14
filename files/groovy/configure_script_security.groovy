@@ -46,7 +46,6 @@ List<String> changedClasspathsAbsent = new ArrayList<String>()
 // make sure no absent signatures are in present signatures
 for (String absentSignature in signaturesAbsent) {
   if (signaturesPresent.contains(absentSignature)) {
-    println("absentSignature '"+absentSignature+"' is in signaturesPresent, removing");
     signaturesPresent.remove(absentSignature)
   }
 }
