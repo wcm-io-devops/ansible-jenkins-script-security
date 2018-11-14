@@ -4,6 +4,7 @@
     user: "{{ jenkins_script_security_admin_username }}"
     password: "{{ jenkins_script_security_admin_password }}"
     url: "{{ jenkins_script_security_jenkins_base_url }}"
+    timeout: "{{ jenkins_script_security_timeout }}"
     args:
       signaturesPresent: "{{ jenkins_script_security_approved_signatures_present | to_json }}"
       signaturesAbsent: "{{ jenkins_script_security_approved_signatures_absent | to_json }}"

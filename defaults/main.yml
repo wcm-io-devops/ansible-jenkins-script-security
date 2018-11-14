@@ -19,6 +19,9 @@ jenkins_script_security_jenkins_update_dir: "{{ jenkins_plugins_jenkins_home }}/
 # The base url of the jenkins instance
 jenkins_script_security_jenkins_base_url: "http://{{ jenkins_script_security_jenkins_hostname }}:{{ jenkins_script_security_jenkins_port }}{{ jenkins_script_security_jenkins_url_prefix }}"
 
+# Timeout in seconds for the jenkins_script
+jenkins_script_security_timeout: 60
+
 # List of signature to approve.
 jenkins_script_security_approved_signatures_present: []
 # example entries:
