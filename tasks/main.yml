@@ -9,11 +9,14 @@
       signaturesPresent: "{{ jenkins_script_security_approved_signatures_present | to_json }}"
       signaturesAbsent: "{{ jenkins_script_security_approved_signatures_absent | to_json }}"
   register: _jenkins_script_security_result
-  changed_when: (_jenkins_script_security_result.output is defined) and (_jenkins_script_security_result.output | regex_replace('^Result:\\s*(.*)\\n*$', '\\1') | b64decode | from_json).changed == true
+  changed_when: (_jenkins_script_security_result.output is defined) and
+                (_jenkins_script_security_result.output | regex_replace('^Result:\\s*(.*)\\n*$', '\\1')
+                | b64decode | from_json).changed
 
 - name: "Parse groovy script result."
   set_fact:
-    jenkins_script_security_raw: "{{ _jenkins_script_security_result.output | regex_replace('^Result:\\s*(.*)\\n*$', '\\1') | b64decode }}"
+    jenkins_script_security_raw:
+      "{{ _jenkins_script_security_result.output | regex_replace('^Result:\\s*(.*)\\n*$', '\\1') | b64decode }}"
 
 - name: "Log result json."
   debug:
