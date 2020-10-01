@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/wcm-io-devops/ansible-jenkins-script-security.svg?branch=master)](https://travis-ci.org/wcm-io-devops/ansible-jenkins-script-security)
+
 # wcm_io_devops.jenkins_script_security
 
 This role manages the approval of signatures for the
@@ -10,7 +12,7 @@ restart the instance.
 
 ## Requirements
 
-This role requires Ansible 2.4 or higher and a running Jenkins on the
+This role requires Ansible 2.7 or higher and a running Jenkins on the
 target instance.
 
 ## Role Variables
