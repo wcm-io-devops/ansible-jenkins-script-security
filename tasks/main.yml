@@ -1,3 +1,4 @@
+---
 - name: "Configure script approvals."
   jenkins_script:
     script: "{{ lookup('file', 'files/groovy/configure_script_security.groovy') }}"
