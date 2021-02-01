@@ -2,11 +2,11 @@
 name: CI
 
 env:
-  ROLE_NAME: wcm_io_devops.jenkins_plugins
+  ROLE_NAME: wcm_io_devops.jenkins_script_security
 
 defaults:
   run:
-    working-directory: 'wcm_io_devops.jenkins_plugins'
+    working-directory: 'wcm_io_devops.jenkins_script_security'
 
 'on':
   pull_request:
