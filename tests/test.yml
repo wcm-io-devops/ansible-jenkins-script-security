@@ -1,4 +1,5 @@
+---
 - name: test role syntax
   hosts: test
   roles:
-    - ansible-jenkins-script-security
+    - wcm_io_devops.jenkins_script_security

@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/wcm-io-devops/ansible-jenkins-script-security.svg?branch=master)](https://travis-ci.com/wcm-io-devops/ansible-jenkins-script-security)
+[![CI](https://github.com/wcm-io-devops/ansible-jenkins-script-security/workflows/CI/badge.svg?branch=master&event=push)](https://github.com/wcm-io-devops/ansible-jenkins-script-security/actions?query=workflow%3ACI)
 
 # wcm_io_devops.jenkins_script_security
 
